@@ -24,5 +24,31 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(intertWeb);
             }
         });
+
+        binding.button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent wspWeb = new Intent(Intent.ACTION_DIAL);
+                wspWeb.setData(Uri.parse("tel:+56984769464"));
+                startActivity(wspWeb);
+            }
+        });
+        binding.button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String message = binding.editTextText.getText().toString();
+                String[] to= {"soycorreo@gmail.com"};
+
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_EMAIL,to);
+                intent.putExtra(Intent.EXTRA_SUBJECT, "un mensaje");
+                intent.putExtra(Intent.EXTRA_TEXT, message);
+                startActivity(Intent.createChooser(intent, "Enviar"));
+
+
+            }
+        });
+
     }
 }
