@@ -29,7 +29,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent wspWeb = new Intent(Intent.ACTION_DIAL);
-                wspWeb.setData(Uri.parse("tel:+56984769464"));
+                wspWeb.setData(Uri.parse("tel:+56940056462"));
                 startActivity(wspWeb);
             }
         });
